@@ -4,7 +4,25 @@
     </head>
     <body>
 
-      <div id='rating-p00001'></div>
+      <header>An E-Shop</header>
+
+      <article>
+        <div class="left-column">
+          <img src="http://lorempixel.com/640/480/fashion/" />
+          <div id="rating-p00001"></div>
+        </div>
+        <div class="info-column">
+          <h1>Some fashion item</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus egestas dui eu velit lobortis bibendum. In commodo erat quis nunc vestibulum faucibus. Pellentesque rhoncus tincidunt libero id egestas. In vitae quam at enim interdum pretium. Duis mattis faucibus ipsum vitae eleifend. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus venenatis nulla vel urna tristique vulputate. Sed laoreet nulla eu purus varius, non tincidunt ex volutpat. Aenean ut ante mollis, dapibus velit ac, convallis eros. Duis molestie mauris in aliquam accumsan. Vestibulum imperdiet luctus elementum.
+
+            Sed ac quam quis sapien elementum tempus quis sit amet ipsum. Sed sollicitudin, mi in pellentesque dapibus, urna nibh sodales nulla, ac luctus neque velit vitae magna. Ut sit amet risus pulvinar, aliquam nunc a, ornare felis. Sed posuere tortor hendrerit, faucibus enim ac, hendrerit ante. Duis arcu arcu, luctus vel tristique eget, laoreet a ante. Sed blandit consequat efficitur. Morbi pretium tincidunt tincidunt. Nullam lacinia erat quam. Donec bibendum placerat tortor, at pellentesque metus placerat non.
+
+            Nam interdum turpis eu quam fringilla, eu pretium sem auctor. Mauris lobortis nisi ante, in feugiat ipsum aliquam in. Suspendisse egestas consequat nibh ac porttitor. Nunc nec molestie velit. Nulla mollis mollis velit, ut dictum velit ultrices sit amet. Duis laoreet ultricies quam, ut lobortis enim rutrum eget. Proin feugiat eu diam vitae dapibus. Integer sed vulputate eros, a auctor neque.
+          </p>
+        </div>
+
+      </article>
 
       <script src="//cdn.auth0.com/js/lock-7.js"></script>
       <script src="build/auth0-rate-widget.js"></script>
@@ -13,7 +31,7 @@
       var ratingOptions = {
         container: '#rating-p00001',
         endpoint_url: "https://webtask.it.auth0.com/api/run/wt-5491169046745-0/rating_endpoint",
-        product_id: 'p00002',
+        product_id: 'p00001',
         user_token: null,
         loginRequiredCallback: forceLogin
       };

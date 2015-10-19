@@ -71,6 +71,8 @@ export default class Auth0RateWidget {
           $('.' + _this.id).removeClass('rate' + this.data.rate);
         }
 
+        $('.' + _this.id).find('.counter').removeClass('hidden').html(response.votes);
+
         $('.' + _this.id).addClass('rate' + response.rate);
         
         this.data = response

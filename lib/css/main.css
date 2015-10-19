@@ -1,4 +1,7 @@
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+.auth0-rate-widget .hidden {
+  display: none;
+}
 .auth0-rate-widget .rate {
   color: #bfbfbf;
   cursor: pointer;
