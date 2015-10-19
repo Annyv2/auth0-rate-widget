@@ -1,0 +1,38 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+.auth0-rate-widget .rate {
+  color: #bfbfbf;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 30px;
+}
+.auth0-rate-widget.rate1 .rate1,
+.auth0-rate-widget.rate2 .rate1,
+.auth0-rate-widget.rate3 .rate1,
+.auth0-rate-widget.rate4 .rate1,
+.auth0-rate-widget.rate5 .rate1 {
+  color: #ffb500;
+}
+.auth0-rate-widget.rate2 .rate2,
+.auth0-rate-widget.rate3 .rate2,
+.auth0-rate-widget.rate4 .rate2,
+.auth0-rate-widget.rate5 .rate2 {
+  color: #ffb500;
+}
+.auth0-rate-widget.rate3 .rate3,
+.auth0-rate-widget.rate4 .rate3,
+.auth0-rate-widget.rate5 .rate3 {
+  color: #ffb500;
+}
+.auth0-rate-widget.rate4 .rate4,
+.auth0-rate-widget.rate5 .rate4 {
+  color: #ffb500;
+}
+.auth0-rate-widget.rate5 .rate5 {
+  color: #ffb500;
+}
+.auth0-rate-widget:hover .rate {
+  color: #bfbfbf;
+}
+.auth0-rate-widget:hover .rate:hover {
+  color: #ffd46b;
+}

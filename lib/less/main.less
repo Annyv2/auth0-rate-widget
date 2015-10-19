@@ -1,0 +1,55 @@
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
+
+@disabledStar: #BFBFBF;
+@enabledStar: #FFB500;
+@hoverStar: #FFD46B;
+
+.auth0-rate-widget {
+
+  .rate {
+    color:@disabledStar;
+    cursor:pointer;
+    font-size:20px;
+    line-height:30px;
+  }
+
+  &.rate1,&.rate2,&.rate3,&.rate4,&.rate5 {
+    .rate1 {
+      color:@enabledStar;
+    }
+  }
+
+  &.rate2,&.rate3,&.rate4,&.rate5 {
+    .rate2 {
+      color:@enabledStar;
+    }
+  }
+
+  &.rate3,&.rate4,&.rate5 {
+    .rate3 {
+      color:@enabledStar;
+    }
+  }
+
+  &.rate4,&.rate5 {
+    .rate4 {
+      color:@enabledStar;
+    }
+  }
+
+  &.rate5 {
+    .rate5 {
+      color:@enabledStar;
+    }
+  }
+}
+
+.auth0-rate-widget:hover {
+  .rate {
+    color:@disabledStar;
+
+    &:hover {
+      color:@hoverStar;
+    }
+  }
+}

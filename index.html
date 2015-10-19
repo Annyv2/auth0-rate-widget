@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <link href="demoassets/main.css" rel="stylesheet">
+    </head>
+    <body>
+
+      <div id='rating-p00001'></div>
+
+      <script src="//cdn.auth0.com/js/lock-7.js"></script>
+      <script src="build/auth0-rate-widget.js"></script>
+      <script type="text/javascript">
+
+      var ratingOptions = {
+        container: '#rating-p00001',
+        endpoint_url: "https://webtask.it.auth0.com/api/run/wt-5491169046745-0/rating_endpoint",
+        product_id: 'p00002',
+        user_token: null,
+        loginRequiredCallback: forceLogin
+      };
+
+      var rating = new Auth0RateWidget(ratingOptions);
+
+      var domain = 'wptest.auth0.com';
+      var cid = '87CP6ui4BKpWJsqwM5vimGORj5xeajs8';
+      
+      var widget = new Auth0Lock(cid, domain);
+
+      function forceLogin() {
+        login('You need to login');
+      }
+      function login(title) {
+
+        var options = { popup: true };
+        if (title) {
+          options.dict = {
+            signin: {
+              title: title
+            }
+          }
+        }
+
+        widget.show(options, function (err, profile, token) {
+          ratingOptions.user_token = token;
+          rating.setOptions(ratingOptions);
+        });
+      }
+
+      login(true);
+
+      </script>
+    </body>
+</html>
