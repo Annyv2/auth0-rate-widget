@@ -9,7 +9,7 @@ export default class Auth0RateWidget {
     
   constructor (options) {
     if (!(this instanceof Auth0RateWidget)) {
-        return new Auth0RateWidget(endpoint_url);
+        return new Auth0RateWidget(options);
     }
 
     this.setOptions(options);
