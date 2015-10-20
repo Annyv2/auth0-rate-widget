@@ -33,9 +33,9 @@
 .auth0-rate-widget.rate5 .rate5 {
   color: #ffb500;
 }
-.auth0-rate-widget:hover .rate {
+.auth0-rate-widget .stars:hover .rate {
   color: #bfbfbf;
 }
-.auth0-rate-widget:hover .rate:hover {
+.auth0-rate-widget .stars:hover .rate:hover {
   color: #ffd46b;
 }

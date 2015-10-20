@@ -24,6 +24,7 @@ export default class Auth0RateWidget {
     this.container = $(options.container);
     this.data = null;
     this.loginRequiredCallback = options.loginRequiredCallback;
+    this.counterFormat = options.counterFormat;
 
     this.init();
 
@@ -32,7 +33,7 @@ export default class Auth0RateWidget {
   init () {
     var _this = this;
 
-    stars_template(this.container, this.id);
+    stars_template(this.container, this.id, this.counterFormat);
     this.container.find(".rate").click( function() {
       _this.rateClick(this);
     } );
@@ -71,7 +72,8 @@ export default class Auth0RateWidget {
           $('.' + _this.id).removeClass('rate' + this.data.rate);
         }
 
-        $('.' + _this.id).find('.counter').removeClass('hidden').html(response.votes);
+        $('.' + _this.id).find('.counter-wrapper').removeClass('hidden');
+        $('.' + _this.id).find('.counter').html(response.votes);
 
         $('.' + _this.id).addClass('rate' + response.rate);
         
