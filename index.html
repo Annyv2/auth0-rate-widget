@@ -10,6 +10,8 @@
         <div class="left-column">
           <img src="http://lorempixel.com/640/480/fashion/" />
           <div id="rating-p00001"></div>
+          <br>
+          <div id="loading"></div>
         </div>
         <div class="info-column">
           <h1>Some fashion item</h1>
@@ -34,7 +36,15 @@
         product_id: 'p00001',
         user_token: null,
         counter_format: 'Based on %s califications.',
-        loginRequiredCallback: forceLogin
+        loginRequiredCallback: forceLogin,
+        onLoading: function() {
+              console.log('start');
+              document.getElementById('loading').innerHTML = "Loading...";
+            },
+        onLoaded: function() {
+          console.log('end');
+          document.getElementById('loading').innerHTML = "";
+        }
       };
 
       var rating = new Auth0RateWidget(ratingOptions);

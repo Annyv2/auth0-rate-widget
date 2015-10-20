@@ -15,7 +15,25 @@ export default class Auth0RateWidget {
     this.setOptions(options);
   }
 
+  on(event, callback) {
+    if (! this.events[event]) {
+      throw "Invalid event";
+    }
+
+    if (callback) {
+      this.events[event].push(callback);
+    } else {
+      this.events[event].forEach(event => event() );
+    }
+    return this;
+  }
+
   setOptions(options) {
+
+    this.events = {
+      loading:[],
+      loaded:[]
+    };
 
     this.endpoint_url = options.endpoint_url;
     this.product_id = options.product_id;
@@ -25,6 +43,13 @@ export default class Auth0RateWidget {
     this.data = null;
     this.loginRequiredCallback = options.loginRequiredCallback;
     this.counter_format = options.counter_format;
+
+    if (options.onLoading) {
+      this.on('loading', options.onLoading);
+    }
+    if (options.onLoaded) {
+      this.on('loaded', options.onLoaded);
+    }
 
     this.init();
 
@@ -46,6 +71,7 @@ export default class Auth0RateWidget {
     if (this.user_token) {
       headers['Authorization'] = 'Bearer ' + this.user_token;
     }
+    this.on('loading');
 
     var fetch_promise = fetch(this.endpoint_url + '/' + this.product_id, {
       method: 'get',
@@ -58,7 +84,8 @@ export default class Auth0RateWidget {
     var _this = this;
 
     promise
-      .then( function(response) {
+      .then( response => {
+        this.on('loaded');
         if (response.status === 401) {
           throw new UnauthorizedError();
         }
@@ -77,7 +104,7 @@ export default class Auth0RateWidget {
 
         $('.' + _this.id).addClass('rate' + response.rate);
         
-        this.data = response
+        this.data = response;
       })
       .catch(function(e){
         _this.loginRequiredCallback();
@@ -98,7 +125,7 @@ export default class Auth0RateWidget {
       headers['Authorization'] = 'Bearer ' + this.user_token;
     }
 
-
+    this.on('loading');
     var fetch_promise = fetch(this.endpoint_url + '/' + this.product_id, {
         method: 'post',
         headers: headers,
